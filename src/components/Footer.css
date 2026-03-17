@@ -1,0 +1,16 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: var(--s6) 0;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s3);
+}
+.footer-name { font-family: var(--f-display); font-size: 1rem; font-weight: 800; color: var(--text); }
+.footer-name span { color: var(--accent); }
+.footer-copy { font-size: 0.75rem; color: var(--text-3); }
+.footer-gh { font-size: 0.75rem; font-family: var(--f-display); font-weight: 600; color: var(--text-3); text-decoration: none; letter-spacing: 0.05em; transition: color var(--ease); }
+.footer-gh:hover { color: var(--accent); }

@@ -1,0 +1,93 @@
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--s5);
+}
+
+.exp-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  padding: var(--s5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  transition: all var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.exp-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity var(--ease);
+}
+.exp-card:hover {
+  border-color: var(--border-hi);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 36px rgba(0,0,0,0.3);
+}
+.exp-card:hover::after { opacity: 1; }
+
+.exp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exp-badge {
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-bg);
+  padding: 2px 9px;
+  border-radius: 100px;
+}
+
+.exp-dur {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  font-family: var(--f-display);
+}
+
+.exp-role {
+  font-family: var(--f-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.exp-co {
+  font-size: 0.82rem;
+  color: var(--text-2);
+}
+
+.exp-desc {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.exp-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tag-mono {
+  font-size: 0.7rem;
+  color: var(--text-3);
+  font-family: monospace;
+  letter-spacing: 0.02em;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 4px;
+}

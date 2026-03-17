@@ -1,0 +1,102 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Colors */
+  --bg:        #07090d;
+  --bg-alt:    #0b0e14;
+  --card:      #0f1318;
+  --border:    rgba(255,255,255,0.06);
+  --border-hi: rgba(255,255,255,0.12);
+  --text:      #dde1ea;
+  --text-2:    #8b919e;
+  --text-3:    #555c6a;
+  --accent:    #6effa8;
+  --accent-bg: rgba(110,255,168,0.08);
+  --accent-gl: rgba(110,255,168,0.22);
+
+  /* Type */
+  --f-display: 'DM Sans', sans-serif;
+  --f-body:    'DM Sans', sans-serif;
+
+  /* Space scale */
+  --s1: 4px;  --s2: 8px;  --s3: 12px; --s4: 16px;
+  --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
+
+  /* Misc */
+  --r:  10px;
+  --rl: 16px;
+  --ease: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--accent); color: #000; }
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+/* ── Layout ── */
+section { padding: var(--s9) 0; }
+.container { max-width: 1040px; margin: 0 auto; padding: 0 var(--s6); }
+
+/* ── Section header ── */
+.sh {
+  margin-bottom: var(--s7);
+}
+.sh-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  font-family: var(--f-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--s3);
+}
+.sh-eyebrow::before {
+  content: '';
+  display: block;
+  width: 20px; height: 1px;
+  background: var(--accent);
+}
+.sh-title {
+  font-family: var(--f-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: var(--s3);
+}
+.sh-sub {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  max-width: 440px;
+  line-height: 1.7;
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fu { animation: fadeUp 0.5s ease both; }
+
+/* ── Divider sections ── */
+.section-alt {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
