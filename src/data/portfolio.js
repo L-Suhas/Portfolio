@@ -7,7 +7,7 @@ export const personal = {
   github: "https://github.com/L-Suhas",
   linkedin: "https://linkedin.com/in/suhas-lingampalli-39137a237",
   location: "Vijayawada, India",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "public/Lingampalli Suhas.pdf",
 };
 
 export const education = [
